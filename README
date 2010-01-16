@@ -1,0 +1,57 @@
+sfVideoPlugin
+=============
+
+The `tdVideoPlugin` is a symfony plugin providing easy interface for flash
+video player to embed in symfony projects. It is based on my sfVideoPlugin and
+is integrated into _TD CMF_.
+
+This plugin is a part of __TD CMF__ and is based on __Doctrine ORM__.
+
+Installation
+============
+
+Install the plugin via the subversion repository:
+
+    $ svn co http://svn.symfony-project.com/plugins/tdVideoPlugin/trunk plugins/tdVideoPlugin
+
+from the project root directory or by using the command:
+
+    $ ./symfony plugin:install tdVideoPlugin
+
+Right after the installation of the plugin, you should update plugin assets:
+
+    $ ./symfony plugin:publish-assets
+
+so that the default JS and CSS files of the plugin are accessible. Everything
+is done properly now.
+
+Usage
+=====
+
+Go to the _config_ directory of the plugin and uncomment all lines in the
+_routing.yml_ file.
+
+Enable the sfVideo module in your application's config/settings.yml
+enabled_modules section:
+
+    [php]
+    enabled_modules: [ ..., sfVideo ]
+
+Run the following URL in your browser:
+
+    http://your-site/video
+
+You may choose from 3 example flv files to display. An example of linking flv
+file is shown in sfVideo/templates/indexSuccess.php.
+
+Documentation
+=============
+
+The offcial documentation of the flowplayer can be found
+[here](http://flowplayer.org/documentation/).
+
+Credits
+=======
+
+Example flv files have been downloaded from
+[media college](http://www.mediacollege.com/adobe/flash/video/tutorial/example-flv.html)

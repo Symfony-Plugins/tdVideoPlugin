@@ -1,0 +1,25 @@
+options:
+  collate: utf8_general_ci
+  charset: utf8
+
+tdVideo:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(64)
+      notnull: true
+    description:
+      type: clob
+      notnull: true
+    file:
+      type: string(255)
+      notnull: true
+    author:
+      type: string(64)
+    recorded_at:
+      type: timestamp
+    active:
+      type: boolean
+      notnull: true
+      default: true

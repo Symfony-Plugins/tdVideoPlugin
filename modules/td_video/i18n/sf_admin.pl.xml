@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <header />
+    <body>
+      <!-- Help fields -->
+      <trans-unit>
+        <source>if the link shall be visible on the frontend website</source>
+        <target>czy link ma być widoczny na stronie www</target>
+      </trans-unit>
+
+      <!-- Object/Batch Actions -->
+      <trans-unit>
+        <source>Activate</source>
+        <target>Aktywuj</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Deactivate</source>
+        <target>Deaktywuj</target>
+      </trans-unit>
+
+      <!-- Actions -->
+      <trans-unit>
+        <source>Video file list</source>
+        <target>Lista plików video</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit video file</source>
+        <target>Edytuj plik video</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New video file</source>
+        <target>Nowy plik video</target>
+      </trans-unit>
+
+      <!-- Flashes -->
+      <trans-unit>
+        <source>The selected video files have been activated successfully.</source>
+        <target>Wybrane pliki video zostały aktywowane.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected video file has been activated successfully.</source>
+        <target>Wybrany plik video gości został aktywowany.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected video files have been deactivated successfully.</source>
+        <target>Wybrane pliki video zostały deaktywowane.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected video file has been deactivated successfully.</source>
+        <target>Wybrany plik video został deaktywowany.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

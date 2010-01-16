@@ -1,0 +1,13 @@
+<?php $generator = new tdRandomDataGenerator(); ?>
+tdVideo:
+<?php for ($i = 1; $i <= 3; $i++): ?>
+  video_<?php echo $i ?>:
+    name: <?php echo $generator->getRandomText(mt_rand(10,40))."\n" ?>
+    description: <?php echo $generator->getRandomText(mt_rand(40,400)*mt_rand(1,5))."\n" ?>
+    file: 0<?php echo $i ?>.flv
+<?php if ($i == 2): ?>
+    active: false
+<?php endif; ?>
+    author: <?php echo $generator->getRandomName()."\n" ?>
+    recorded_at: <?php echo $generator->getRandomCreatedAt(2000 + mt_rand(1,9))."\n" ?>
+<?php endfor; ?>

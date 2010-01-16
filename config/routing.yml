@@ -1,0 +1,18 @@
+td_sample_video:
+  url:   /video
+  param: { module: tdSampleVideo, action: index }
+
+td_sample_video_show:
+  url:   /video/:file
+  param: { module: tdSampleVideo, action: show }
+  options:
+    segment_separators: ['/'] # disabling '.' separator
+
+td_video:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                tdVideo
+    module:               td_video
+    prefix_path:          /td_video
+    column:               id
+    with_wildcard_routes: true
