@@ -12,9 +12,14 @@
  */
 abstract class PlugintdVideo extends BasetdVideo
 {
+  /**
+   * Returns short description of the video.
+   *
+   * @return String - short description.
+   */
   public function getDescriptionShort()
   {
-    return mb_substr($this->getDescription(), 0, 200).'...';
+    return mb_substr($this->getDescription(), 0, sfConfig::get('td_video_short_text_sign_count')).'...';
   }
 
   /**
