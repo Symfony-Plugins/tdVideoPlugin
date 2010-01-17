@@ -12,11 +12,17 @@ class tdSampleVideoActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
+    // ading default td_video layout
+    $this->getResponse()->addStylesheet('/tdVideoPlugin/css/td_video');
+
     $this->videos = Doctrine::getTable('tdVideo')->getActiveVideosQuery()->fetchArray();
   }
 
   public function executeShow(sfWebRequest $request)
   {
+    // ading default td_video layout
+    $this->getResponse()->addStylesheet('/tdVideoPlugin/css/td_video');
+
     $results = Doctrine::getTable('tdVideo')->getActiveVideoByFileQuery($request->getParameter('file'))->fetchArray();
     $this->video = $results[0];
 

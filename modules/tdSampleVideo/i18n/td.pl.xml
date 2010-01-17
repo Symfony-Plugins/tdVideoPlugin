@@ -13,6 +13,10 @@
         <target>obejrzyj</target>
       </trans-unit>
       <trans-unit>
+        <source>Name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit>
         <source>Author</source>
         <target>Autor</target>
       </trans-unit>

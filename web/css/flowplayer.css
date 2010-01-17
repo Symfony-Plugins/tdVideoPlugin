@@ -1,40 +1,24 @@
 
 body {
-	background-color:#fff;	
-	font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",verdana,arial;
+	background-color: #fff;
+	font-family: "Lucida Grande","bitstream vera sans","trebuchet ms",verdana,arial;
 }
 
-#page {
-	background-color:#efefef;
-	width:520px;
-	margin:50px auto;
-	padding:20px 150px 20px 50px;
-	border:2px solid #fff;
-	outline:1px solid #ccc;
-	text-align:left;
-	text-align:center;
-}
-
-h1, h2 {
-	letter-spacing:-1px;
-	color:#2D5AC3;
-	font-weight:normal;		
-	margin-bottom:-10px;
-}
-
-h1 {
-	font-size:22px;
-}
-
-h2 {
-	font-size:18px;
+#video {
+	background-color: #efefef;
+	width: 520px;
+	margin: 50px auto;
+	border: 2px solid #fff;
+	outline: 1px solid #ccc;
+	text-align: left;
+	text-align: center;
 }
 
 .less {
-	color:#999;
-	font-size:12px;
+	color: #999;
+	font-size: 12px;
 }
 
 a {
-	color:#295c72;		
+	color: #295c72;
 }

@@ -1,0 +1,30 @@
+#video {
+    list-style-type: none;
+}
+
+#video li {
+    border: 1px solid #bbb;
+    margin: 10px;
+    padding: 5px;
+    background-color: #eee;
+}
+
+#video div {
+    margin: 2px;
+}
+
+#video span.title {
+    font-variant: small-caps;
+}
+
+#video div.link a {
+    font-variant: small-caps;
+}
+
+#video div {
+    text-align: justify;
+}
+
+#video div.description {
+    text-indent: 20px;
+}

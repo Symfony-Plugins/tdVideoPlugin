@@ -4,18 +4,27 @@
 
 <?php use_helper('Video', 'Date') ?>
 
-<div id="page">
+<div id="video">
 
-    <h1><?php echo $video['name'] ?></h1>
-    <p><?php echo __('Author', array(), 'td').': '.$video['author'] ?></p>
-    <p><?php echo __('Recorded at', array(), 'td').': '.(false !== strtotime($video['recorded_at']) ? format_date($video['recorded_at'], "f") : '&nbsp;') ?></p>
+  <h1><?php echo $video['name'] ?></h1>
+  <div class="author">
+    <span class="title"><?php echo __('Author', array(), 'td')?>: </span>
+    <span class="value"><?php echo $video['author'] ?></span>
+  </div>
+  <div class="recorded_at">
+    <span class="title"><?php echo __('Recorded at', array(), 'td')?>: </span>
+    <span class="value"><?php echo (false !== strtotime($video['recorded_at']) ? format_date($video['recorded_at'], "f") : '&nbsp;') ?></span>
+  </div>
 
-    <a href="<?php echo video_path('flv'.'/'.$video['file']) ?>" style="display:block;width:520px;height:330px" id="player"></a>
+  <a href="<?php echo video_path('flv'.'/'.$video['file']) ?>" style="display:block;width:520px;height:330px" id="player"></a>
 
-    <script>
-        flowplayer("player", "<?php echo video_path('swf/flowplayer-3.1.5.swf') ?>");
-    </script>
+  <script>
+    flowplayer("player", "<?php echo video_path('swf/flowplayer-3.1.5.swf') ?>");
+  </script>
 
-    <p><?php echo __('Description', array(), 'td').': '.$video['description'] ?></p>
+  <div class="description">
+    <span class="title"><?php echo __('Description', array(), 'td')?>: </span>
+    <span class="value"><?php echo $video['description'] ?></span>
+  </div>
 
 </div>

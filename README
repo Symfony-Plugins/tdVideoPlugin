@@ -35,14 +35,15 @@ Enable the sfVideo module in your application's config/settings.yml
 enabled_modules section:
 
     [php]
-    enabled_modules: [ ..., sfVideo ]
+    enabled_modules: [ ..., tdSampleVideo ]
 
 Run the following URL in your browser:
 
     http://your-site/video
 
-You may choose from 3 example flv files to display. An example of linking flv
-file is shown in sfVideo/templates/indexSuccess.php.
+You may choose from 3 example flv files to display. They can be loaded with the
+fixture file provided. Example flv files are displayed in
+tdSampleVideo/templates/indexSuccess.php file.
 
 Documentation
 =============
