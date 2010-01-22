@@ -57,10 +57,6 @@ generator:
             attributes: { size: 80 }
           author:
             attributes: { size: 80 }
-          name:
-            attributes: { size: 80 }
-          http:
-            attributes: { size: 80 }
           description:
             attributes: { cols: 80, rows: 10 }
       edit:

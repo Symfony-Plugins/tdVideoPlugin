@@ -20,8 +20,8 @@ class PlugintdVideoTable extends Doctrine_Table
   static public function getActiveVideosQuery()
   {
     return Doctrine_Query::create()
-             ->from('tdVideo v')
-             ->where('v.active = "1"');
+      ->from('tdVideo v')
+      ->where('v.active = "1"');
   }
 
   /**
@@ -33,21 +33,64 @@ class PlugintdVideoTable extends Doctrine_Table
   static public function getActiveVideoByFileQuery($file)
   {
     return Doctrine_Query::create()
-             ->from('tdVideo v')
-             ->where('v.file = ?', $file)
-             ->andWhere('v.active = "1"');
+      ->from('tdVideo v')
+      ->where('v.file = ?', $file)
+      ->andWhere('v.active = "1"');
   }
 
   /**
    * Returns DQL query retrieving video files selected by ids.
    *
-   * @param Array $ids - Identifiers of selected links.
+   * @param Array $ids - Identifiers of selected videos.
    * @return Doctrine_Query
    */
   static public function getSelectedVideosQuery($ids)
   {
     return Doctrine_Query::create()
-             ->from('tdVideo v')
-             ->whereIn('v.id', $ids);
+      ->from('tdVideo v')
+      ->whereIn('v.id', $ids);
+  }
+
+  /**
+   * Returns ids of all active videos.
+   *
+   * @param Array $ids - Identifiers of active videos.
+   * @return Array
+   */
+  static protected function getActiveVideosIds()
+  {
+    $query = self::getActiveVideosQuery()
+      ->select('v.id');
+    $data = $query->fetchArray();
+
+    $ids = array();
+    foreach($data as $d)
+    {
+      $ids[] = $d['id'];
+    }
+    return $ids;
+  }
+
+  /**
+   * Returns DQL query retrieving random videos.
+   *
+   * @param Integer $count - Number of videos to be returned by the query.
+   * @return Doctrine_Query
+   */
+  static public function getRandomActiveVideosQuery($count)
+  {
+    $ids = self::getActiveVideosIds();
+    
+    $selected = array();
+    for ($i = 0; $i < $count; $i++)
+    {
+      $id = rand(0, count($ids));
+      while (!isset($ids[$id]))
+        $id = rand(0, count($ids));
+      $selected[] = $ids[$id];
+      unset($ids[$id]);
+    }
+
+    return self::getSelectedVideosQuery($selected);
   }
 }
