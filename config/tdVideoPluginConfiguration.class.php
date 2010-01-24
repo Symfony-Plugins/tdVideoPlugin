@@ -18,7 +18,7 @@ class tdVideoPluginConfiguration extends sfPluginConfiguration
   public function initialize()
   {
     // video files upload dir
-    sfConfig::set('td_video_image_dir', sfConfig::get('sf_web_dir').'/tdVideoPlugin/flv');
+    sfConfig::set('td_video_upload_dir', sfConfig::get('sf_web_dir').'/uploads/td/video');
 
     // video short description sign count
     sfConfig::set('td_video_short_text_sign_count', 200);

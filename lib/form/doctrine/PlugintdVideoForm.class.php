@@ -32,7 +32,7 @@ abstract class PlugintdVideoForm extends BasetdVideoForm
       'with_delete' => false,
       'delete_label' => 'usuń plik video',
       'label'     => 'Plik video',
-      'file_src'  => '/tdVideoPlugin/flv/'.$this->getObject()->getFile(),
+      'file_src'  => '/uploads/td/video/'.$this->getObject()->getFile(),
       'edit_mode' => !$this->isNew(),
       'template'  => '%file%<br />%input%<br />%delete% %delete_label%',
     )));
@@ -45,7 +45,7 @@ abstract class PlugintdVideoForm extends BasetdVideoForm
 
     $this->setValidator('file', new sfValidatorFile(array(
       'required'   => true,
-      'path'       => sfConfig::get('td_video_image_dir'),
+      'path'       => sfConfig::get('td_video_upload_dir'),
     ), array(
       'required' => 'Musisz wybrać plik',
     )));
