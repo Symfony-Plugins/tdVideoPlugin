@@ -1,4 +1,4 @@
-sfVideoPlugin
+tdVideoPlugin
 =============
 
 The `tdVideoPlugin` is a symfony plugin providing easy interface for flash
@@ -28,22 +28,45 @@ is done properly now.
 Usage
 =====
 
-Go to the _config_ directory of the plugin and uncomment all lines in the
-_routing.yml_ file.
+  * Enable the tdSampleVideo module in your frontend application's
+    _config/settings.yml_ enabled_modules section:
 
-Enable the sfVideo module in your application's config/settings.yml
-enabled_modules section:
+        [php]
+        enabled_modules: [ ..., tdSampleVideo ]
 
-    [php]
-    enabled_modules: [ ..., tdSampleVideo ]
+  * Fixtures are provided with the plugin - 3 flv files (thanks to
+    [media_college](http://www.mediacollege.com/adobe/flash/video/tutorial/example-flv.html).
+    Run following commands:
 
-Run the following URL in your browser:
+        $ ./symfony doctrine:build --all
 
-    http://your-site/video
+    and
 
-You may choose from 3 example flv files to display. They can be loaded with the
-fixture file provided. Example flv files are displayed in
-tdSampleVideo/templates/indexSuccess.php file.
+        $ ./symfony doctrine:data-load
+
+    and run the following URL in your browser:
+
+        http://your-project/video
+
+    You may choose from 3 example flv files to display. Example flv files are
+    displayed in _tdSampleVideo/templates/indexSuccess.php_ file.
+
+  * Enable the td_video admin generator in your backend application's
+    _config/settings.yml_ enabled_modules section:
+
+        [php]
+        enabled_modules: [ ..., td_video ]
+
+Configuration
+=============
+
+You can modify settings of the tdVideoPlugin in the
+__config/tdVideoPluginConfiguration.class.php__ file:
+
+  * _td_video_image_dir_ - upload dir of all video files
+
+  * _td_video_short_text_sign_count_ - character count of a short video
+    descrtiption version
 
 Documentation
 =============
