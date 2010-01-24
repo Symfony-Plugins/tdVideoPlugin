@@ -16,7 +16,7 @@
     <span class="value"><?php echo (false !== strtotime($video['recorded_at']) ? format_date($video['recorded_at'], "f") : '&nbsp;') ?></span>
   </div>
 
-  <a href="<?php echo video_path('flv'.'/'.$video['file']) ?>" style="display:block;width:520px;height:330px" id="player"></a>
+  <a href="<?php echo '/uploads/td/video/'.$video['file'] ?>" style="display:block;width:520px;height:330px" id="player"></a>
 
   <script>
     flowplayer("player", "<?php echo video_path('swf/flowplayer-3.1.5.swf') ?>");
