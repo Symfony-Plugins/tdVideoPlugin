@@ -57,7 +57,7 @@ class PlugintdVideoTable extends Doctrine_Table
    * @param Array $ids - Identifiers of active videos.
    * @return Array
    */
-  static protected function getActiveVideosIds()
+  static public function getActiveVideosIds()
   {
     $query = self::getActiveVideosQuery()
       ->select('v.id');
@@ -80,7 +80,9 @@ class PlugintdVideoTable extends Doctrine_Table
   static public function getRandomActiveVideosQuery($count)
   {
     $ids = self::getActiveVideosIds();
-    
+    // if less videos available than expected
+    if ($count > count($ids)) $count = count($ids);
+
     $selected = array();
     for ($i = 0; $i < $count; $i++)
     {
@@ -91,6 +93,6 @@ class PlugintdVideoTable extends Doctrine_Table
       unset($ids[$id]);
     }
 
-    return self::getSelectedVideosQuery($selected);
+    return empty($selected) ? null : self::getSelectedVideosQuery($selected);
   }
 }
