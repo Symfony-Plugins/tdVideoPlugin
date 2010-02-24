@@ -19,8 +19,5 @@ class tdVideoPluginConfiguration extends sfPluginConfiguration
   {
     // video files upload dir
     sfConfig::set('td_video_upload_dir', sfConfig::get('sf_web_dir').'/uploads/td/video');
-
-    // video short description sign count
-    sfConfig::set('td_video_short_text_sign_count', 200);
   }
 }

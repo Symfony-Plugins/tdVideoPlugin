@@ -19,7 +19,7 @@ abstract class PlugintdVideo extends BasetdVideo
    */
   public function getDescriptionShort()
   {
-    return tdTools::getMbShortenedString($this->getDescription(), sfConfig::get('td_video_short_text_sign_count'));
+    return tdTools::getMbShortenedString($this->getDescription(), sfConfig::get('td_short_text_sign_count'));
   }
 
   /**
@@ -44,5 +44,17 @@ abstract class PlugintdVideo extends BasetdVideo
     $this->setActive(false);
     $this->save();
     return true;
+  }
+
+  /**
+   * Attempts to delete the video flv file before record is deleted.
+   *
+   * @param Doctrine_Event $event
+   */
+  public function preDelete($event)
+  {
+    $file_path = sfConfig::get('td_video_upload_dir').'/'.$this->getFile();
+    if (file_exists($file_path))
+      unlink($file_path);
   }
 }
