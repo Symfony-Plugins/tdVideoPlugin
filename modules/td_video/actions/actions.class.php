@@ -65,33 +65,29 @@ class td_videoActions extends autoTd_videoActions
         $this->redirect('@td_video');
     }
 
-    /**
-     * Activates selected video file.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeListActivate(sfWebRequest $request)
-    {
-        $video = $this->getRoute()->getObject();
-        $video->activate();
+  /**
+   * Activates a video from admin generator list using AJAX.
+   *
+   * @param sfWebRequest $request
+   * @return Partial - generated partial enabling video deactivating (switch).
+   */
+  public function executeActivate(sfWebRequest $request)
+  {
+    $video = Doctrine::getTable('tdVideo')->findOneById($request->getParameter('id'));
+    $video->activate();
+    return $this->renderPartial('td_video/ajax_deactivate', array('td_video' => $video));
+  }
 
-        $this->getUser()->setFlash('notice', 'The selected video file has been activated successfully.');
-
-        $this->redirect('@td_video');
-    }
-
-    /**
-     * Deactivates selected video file.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeListDeactivate(sfWebRequest $request)
-    {
-        $video = $this->getRoute()->getObject();
-        $video->deactivate();
-
-        $this->getUser()->setFlash('notice', 'The selected video file has been deactivated successfully.');
-
-        $this->redirect('@td_video');
-    }
+  /**
+   * Deactivates a video from admin generator list using AJAX.
+   *
+   * @param sfWebRequest $request
+   * @return Partial - generated partial enabling video activating (switch).
+   */
+  public function executeDeactivate(sfWebRequest $request)
+  {
+    $video = Doctrine::getTable('tdVideo')->findOneById($request->getParameter('id'));
+    $video->deactivate();
+    return $this->renderPartial('td_video/ajax_activate', array('td_video' => $video));
+  }
 }

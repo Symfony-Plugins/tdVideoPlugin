@@ -8,6 +8,20 @@ td_sample_video_show:
   options:
     segment_separators: ['/'] # disabling '.' separator
 
+# ajax actions
+
+ajax_video_activate:
+  url:   /ajax-video-activate/:id
+  param: { module: td_video, action: activate }
+  requirements:
+    id: \d+
+
+ajax_video_deactivate:
+  url:   /ajax-video-deactivate/:id
+  param: { module: td_video, action: deactivate }
+  requirements:
+    id: \d+
+
 td_video:
   class: sfDoctrineRouteCollection
   options:
